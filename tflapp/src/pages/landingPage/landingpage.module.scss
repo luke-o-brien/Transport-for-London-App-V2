@@ -1,0 +1,22 @@
+.heading {
+  text-align: center;
+}
+
+.buttonContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 5vh;
+  height: 60vh;
+}
+
+.button {
+  background-color: red;
+  padding: 30px;
+  width: 80%;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #ffffff;
+}

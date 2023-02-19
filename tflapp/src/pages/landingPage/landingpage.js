@@ -1,17 +1,23 @@
 import React from "react"
+import { Link } from "react-router-dom"
+import styles from "./landingpage.module.scss"
 
 function LandingPage() {
   return (
     <>
-    <h1>London Transport Application</h1>
     <div>
-      <p>Service Update</p>
+      <h1 className={styles.heading}>London Transport Application</h1>
     </div>
-    <div>
-      <p>Journey Planner</p>
-    </div>
-    <div>
-      <p>Live Departures</p>
+    <div className={styles.buttonContainer}>
+      <Link to="/serviceupdates" className={styles.button}>
+        <p>Service Update</p>
+      </Link>
+      <div className={styles.button}>
+        <p>Journey Planner</p>
+      </div>
+      <Link to="/livedepartures" className={styles.button}>
+        <p>Live Departures</p>
+      </Link>
     </div>
     </>
   )
