@@ -1,0 +1,43 @@
+.linestatusContainer {
+  padding:20px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modeContainer {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5%;
+  padding-top: 10px;
+}
+
+.modeButton {
+  width: 26vw;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(38, 38, 42);
+  color: white;
+  padding: 5px;
+}
+
+.modeButton:hover {
+  background-color: rgb(70, 70, 78);
+}
+
+.modeButtonActive {
+  width: 26vw;
+  font-size: 18px;
+  border: white 2px solid;
+  border-radius: 5px;
+  background-color: rgb(38, 38, 42);
+  padding: 5px;
+  color: white;
+}
+
+.modeButtonActive:hover {
+  background-color: rgb(70, 70, 78);
+}

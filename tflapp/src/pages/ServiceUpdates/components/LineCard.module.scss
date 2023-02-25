@@ -1,13 +1,100 @@
 .LineCard {
   background-color: rgb(38, 38, 42);
-  margin-bottom: 20px;
   width: 90%;
   margin-left: 5%;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2px 0px
+}
+
+.lineName {
+  font-size: 1.0rem;
+  padding-bottom: 5px;
+}
+
+.detailsContainer {
+  display: flex;
+  align-items: center;
+}
+.viewDetails {
+  border: none;
+  background-color: rgba(255, 210, 30, 0.418);
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  height: auto;
+}
+
+.descriptions {
+  margin-top: 20px;
+}
+
+.bakerloo {
   border-left: solid 15px #B36305;
 }
 
-.Bakerloo {
-  border-left: solid 15px #B36305;
+.central {
+  border-left: solid 15px #E32017;
+
+
+}
+.circle {
+  border-left: solid 15px #FFD300;
+}
+
+.district {
+  border-left: solid 15px #00782A;
+}
+.hammersmith-city{
+  border-left: solid 15px #F3A9BB;
+
+}
+.jubilee {
+  border-left: solid 15px #A0A5A9;
+
+
+}
+.metropolitan {
+  border-left: solid 15px #9B0056;
+
+}
+.northern {
+  border-left: solid 15px #000000;
+
+}
+.piccadilly {
+  border-left: solid 15px #003688;
+
+}
+.victoria {
+  border-left: solid 15px #0098D4;
+
+}
+.waterloo-city {
+  border-left: solid 15px #95CDBA; 
+}
+.dlr {
+  border-left: solid 15px #00A4A7;
+
+}
+
+.london-overground {
+  border-left: solid 15px #EE7C0E;
+}
+
+.elizabeth {
+  border-left: solid 15px #7156A5;
+}
+
+.tram {
+
+  border-left: solid 15px #84B817;
+
 }
