@@ -13,7 +13,7 @@ function App() {
   console.log(theme)
   return (
     
-    <div className={theme ? "night" : "day"}>
+    <div className="app" data-theme={theme} >
         <Routes>
           <Route path="/" element={<LandingPage/>} />
           <Route path="/livedepartures" element={<LiveDepartures />} />

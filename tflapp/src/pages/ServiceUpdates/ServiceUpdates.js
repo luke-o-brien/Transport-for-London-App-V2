@@ -13,6 +13,15 @@ function ServiceUpdates() {
   const [linestatus, setLineStatus] = useState(undefined)
   const [mode, setMode ] = useState(apiVariables.TFLLines)
   
+
+  function handletoggle(e) {
+    if (apiVariables[e.target.value] === mode) {
+      console.log("no reload")
+    } else {
+    setLineStatus(undefined)
+    setMode(apiVariables[e.target.value])
+    }
+  }
   useEffect(() => {
     async function GetServiceData() {
       const response = await fetch(`https://api.tfl.gov.uk/line/mode/${mode}/status/`)
@@ -28,9 +37,9 @@ function ServiceUpdates() {
     <>
     <h1>Service updates</h1>
     <div className={styles.modeContainer}>
-    <button className={ mode === apiVariables.TFLLines ? styles.modeButtonActive : styles.modeButton} onClick={(() => setMode(apiVariables.TFLLines))}>TFL Lines</button>
-    <button className={ mode === apiVariables.River ? styles.modeButtonActive : styles.modeButton} onClick={(() => setMode(apiVariables.River))}>River</button>
-    <button className={ mode === apiVariables.Bus ? styles.modeButtonActive : styles.modeButton} onClick={(() => setMode(apiVariables.Bus))}>Bus</button>
+    <button className={ mode === apiVariables.TFLLines ? styles.modeButtonActive : styles.modeButton} onClick={((e) => handletoggle(e))} value="TFLLines">TFL Lines</button>
+    <button className={ mode === apiVariables.River ? styles.modeButtonActive : styles.modeButton} onClick={((e) => handletoggle(e))} value="River">River</button>
+   <><button className={ mode === apiVariables.Bus ? styles.modeButtonActive : styles.modeButton} onClick={((e) => handletoggle(e))} Value="Bus">Bus</button></> 
     </div>
     <div className={styles.linestatusContainer}>
     {linestatus && linestatus.map((line, i) => {

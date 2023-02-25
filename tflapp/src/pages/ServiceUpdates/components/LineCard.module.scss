@@ -1,5 +1,5 @@
 .LineCard {
-  background-color: rgb(38, 38, 42);
+  background-color: var(--card-color);
   width: 90%;
   margin-left: 5%;
   padding: 10px;
@@ -34,67 +34,4 @@
 
 .descriptions {
   margin-top: 20px;
-}
-
-.bakerloo {
-  border-left: solid 15px #B36305;
-}
-
-.central {
-  border-left: solid 15px #E32017;
-
-
-}
-.circle {
-  border-left: solid 15px #FFD300;
-}
-
-.district {
-  border-left: solid 15px #00782A;
-}
-.hammersmith-city{
-  border-left: solid 15px #F3A9BB;
-
-}
-.jubilee {
-  border-left: solid 15px #A0A5A9;
-
-
-}
-.metropolitan {
-  border-left: solid 15px #9B0056;
-
-}
-.northern {
-  border-left: solid 15px #000000;
-
-}
-.piccadilly {
-  border-left: solid 15px #003688;
-
-}
-.victoria {
-  border-left: solid 15px #0098D4;
-
-}
-.waterloo-city {
-  border-left: solid 15px #95CDBA; 
-}
-.dlr {
-  border-left: solid 15px #00A4A7;
-
-}
-
-.london-overground {
-  border-left: solid 15px #EE7C0E;
-}
-
-.elizabeth {
-  border-left: solid 15px #7156A5;
-}
-
-.tram {
-
-  border-left: solid 15px #84B817;
-
 }

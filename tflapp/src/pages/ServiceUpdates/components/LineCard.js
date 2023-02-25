@@ -9,7 +9,7 @@ function LineCard({line, status, description, id, statusSeverity}) {
   
   return (
     <>
-    <div className={`${styles.LineCard} ${styles[id]}`}>
+    <div className={styles.LineCard} style={{"border-left": `solid 15px var(--${id})`}}>
       <div className={styles.cardContent}>
         <div>
           <h3 className={styles.lineName}>{line}</h3>

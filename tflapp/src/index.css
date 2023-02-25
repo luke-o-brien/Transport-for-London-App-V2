@@ -1,3 +1,48 @@
+:root {
+  --theme-color: rgb(255, 255, 255);
+  --primary-font: black;
+  --card-color: green;
+  --bakerloo:  #B36305;
+  --central: #E32017;
+  --circle: #FFD300;
+  --district: #00782A;
+  --hammersmith-city: #F3A9BB;
+  --jubilee: #A0A5A9;
+  --metropolitan: #9B0056;
+  --northern: #000000;
+  --piccadilly: #003688;
+  --victoria: #0098D4;
+  --waterloo-city: #95CDBA;
+  --dlr: #00A4A7;
+  --london-overground: #EE7C0E;
+  --elizabeth: #7156A5;
+  --tram: #84B817;
+  --city-cruises: #E32017;
+  --woolwich-ferry: #f7931d;
+  --thames-river-services: #2a2e98;
+  --rb1: #2d3039;
+  --rb2: #0072bc;
+  --rb4: #61c29d;
+  --rb6: #df64b0;
+  --bus: #E32017;
+}
+
+[data-theme="light" ] {
+  --theme-color: rgb(255, 255, 255);
+  --primary-font: black;
+  --card-color: rgb(255, 255, 255);
+}
+
+[data-theme="dark" ] {
+  --theme-color: rgb(29, 29, 37);
+  --primary-font: white;
+  --card-color:  rgb(38, 38, 42);
+}
+
+
+
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +56,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+

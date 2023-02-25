@@ -4,14 +4,27 @@
   box-sizing: border-box;
 }
 
-.night{
-  background-color: rgb(29, 29, 37);
-  min-height: 100vh;
-  color: white;
-
+/* :root {
+  --theme-color: rgb(255, 255, 255);
+  --primary-font: black;
+  --card-color: rgb(255, 0, 0);
 }
 
-.day {
-  background-color: white;
+[data-theme="light" ] {
+  --theme-color: rgb(255, 255, 255);
+  --primary-font: black;
+  --card-color: rgb(255, 0, 0);
+}
+
+[data-theme = "dark" ] {
+  --theme-color: rgb(29, 29, 37);
+  --primary-font: white;
+  --card-colour: rgb(0, 0, 255);
+} */
+
+
+.app {
+  background-color: var(--theme-color);
+  color: var(--primary-font);
   min-height: 100vh;
 }
