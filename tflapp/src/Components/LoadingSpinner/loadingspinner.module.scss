@@ -1,0 +1,45 @@
+.loaderContainer {
+  margin-top: 250px;
+  margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.loader {
+  border: 20px solid rgb(0, 130, 28);
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: scale(1);
+      border-color: var(--bakerloo);
+    }
+  10% {
+    transform: scale(3); border-width: 1px;
+  }
+  20% { transform: scale(1);
+        border-color: var(--central); border-width: 20px;}
+  30% {
+        transform: scale(3); border-width: 1px;
+      }
+  40% {transform: scale(1);
+        border-color: var(--circle); border-width: 20px;}
+
+  50% {transform: scale(3); border-width: 1px;}
+
+  60% {transform: scale(1);
+      border-color: var(--elizabeth); border-width: 20px;}
+
+  70% { transform: scale(3); border-width: 1px;
+     }
+
+  80% { transform: scale(1);
+        border-color: var(--victoria); border-width: 20px;}
+  90% { transform: scale(3); border-width: 1px;}
+
+  100% {transform: scale(1);
+    border-color: var(--bakerloo); border-width: 20px;}
+}

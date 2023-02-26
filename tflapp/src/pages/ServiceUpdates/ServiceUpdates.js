@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import LineCard from "./components/LineCard";
 import styles from "./ServiceUpdates.module.scss"
+import LoadingSpinner from "../../Components/LoadingSpinner/loadingspinner";
 
 function ServiceUpdates() {
 
@@ -27,7 +28,7 @@ function ServiceUpdates() {
       const response = await fetch(`https://api.tfl.gov.uk/line/mode/${mode}/status/`)
       const data = await response.json()
       console.log(data)
-      setLineStatus(data)
+      setLineStatus(undefined)
     }
     GetServiceData()
   }, [mode]);
@@ -39,10 +40,13 @@ function ServiceUpdates() {
     <div className={styles.modeContainer}>
     <button className={ mode === apiVariables.TFLLines ? styles.modeButtonActive : styles.modeButton} onClick={((e) => handletoggle(e))} value="TFLLines">TFL Lines</button>
     <button className={ mode === apiVariables.River ? styles.modeButtonActive : styles.modeButton} onClick={((e) => handletoggle(e))} value="River">River</button>
-   <><button className={ mode === apiVariables.Bus ? styles.modeButtonActive : styles.modeButton} onClick={((e) => handletoggle(e))} Value="Bus">Bus</button></> 
+    <button className={ mode === apiVariables.Bus ? styles.modeButtonActive : styles.modeButton} onClick={((e) => handletoggle(e))} value="Bus">Bus</button>
     </div>
     <div className={styles.linestatusContainer}>
-    {linestatus && linestatus.map((line, i) => {
+    { mode === apiVariables.Bus &&
+    <input type="text"></input>
+    }
+    {linestatus ? linestatus.map((line, i) => {
       return (
         <LineCard key={i} 
         line={line.name} 
@@ -51,7 +55,7 @@ function ServiceUpdates() {
         id={line.id}
         statusSeverity={line.lineStatuses[0].statusSeverity}
         />
-      )})}
+      )}) : <LoadingSpinner/>}
     </div>
     </>
   )
