@@ -23,16 +23,19 @@ function ServiceUpdates() {
     setMode(apiVariables[e.target.value])
     }
   }
+  
   useEffect(() => {
     async function GetServiceData() {
       const response = await fetch(`https://api.tfl.gov.uk/line/mode/${mode}/status/`)
       const data = await response.json()
       console.log(data)
-      setLineStatus(undefined)
+      setLineStatus(data)
     }
     GetServiceData()
   }, [mode]);
 
+
+ 
 
   return (
     <>
@@ -44,7 +47,7 @@ function ServiceUpdates() {
     </div>
     <div className={styles.linestatusContainer}>
     { mode === apiVariables.Bus &&
-    <input type="text"></input>
+    <input type="text" className={styles.filterbar} placeholder="Start typing to find your route"></input>
     }
     {linestatus ? linestatus.map((line, i) => {
       return (
@@ -54,6 +57,7 @@ function ServiceUpdates() {
         description={line.lineStatuses[0].reason}
         id={line.id}
         statusSeverity={line.lineStatuses[0].statusSeverity}
+        mode={line.modeName}
         />
       )}) : <LoadingSpinner/>}
     </div>

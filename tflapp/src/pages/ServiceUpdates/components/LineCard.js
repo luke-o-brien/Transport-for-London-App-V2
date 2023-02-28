@@ -3,13 +3,13 @@ import { useState } from "react"
 
 import styles from "./LineCard.module.scss"
 
-function LineCard({line, status, description, id, statusSeverity}) {
+function LineCard({line, status, description, id, statusSeverity, mode}) {
 
   const [viewReason, setViewReason] = useState(false)
   
   return (
     <>
-    <div className={styles.LineCard} style={{borderLeft: `solid 15px var(--${id})`}}>
+    <div className={styles.LineCard} style={ mode !== "bus" ? {borderLeft: `solid 15px var(--${id})`} :{borderLeft: `solid 15px var(--central)`} }>
       <div className={styles.cardContent}>
         <div>
           <h3 className={styles.lineName}>{line}</h3>
