@@ -1,0 +1,14 @@
+{
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#ff0000",
+    "titleBar.activeBackground": "#ff0000",
+    "titleBar.inactiveBackground": "#8d0000",
+    "statusBar.foreground": "#ffffff",
+    "titleBar.inactiveForeground": "#000",
+    "titleBar.activeForeground": "#ffffff",
+    "editor.background": "#202020",
+    "terminal.background": "#202020",
+    "sideBar.background": "#2a2a2a"
+  },
+  "window.title": "REACT FRONTEND Project 4",
+}

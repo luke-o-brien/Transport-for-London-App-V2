@@ -13,6 +13,7 @@ function ServiceUpdates() {
   }
   const [linestatus, setLineStatus] = useState(undefined)
   const [mode, setMode ] = useState(apiVariables.TFLLines)
+  const [searchValue, setsearchValue] = useState("")
   
 
   function handletoggle(e) {
@@ -35,7 +36,11 @@ function ServiceUpdates() {
   }, [mode]);
 
 
- 
+  function filterLines() {
+    return linestatus.filter((line) => {
+      return line.name.includes(searchValue)
+    })
+  }
 
   return (
     <>
@@ -46,18 +51,19 @@ function ServiceUpdates() {
     <button className={ mode === apiVariables.Bus ? styles.modeButtonActive : styles.modeButton} onClick={((e) => handletoggle(e))} value="Bus">Bus</button>
     </div>
     <div className={styles.linestatusContainer}>
-    { mode === apiVariables.Bus &&
-    <input type="text" className={styles.filterbar} placeholder="Start typing to find your route"></input>
+    { mode === apiVariables.Bus && linestatus && 
+    <input type="text" className={styles.filterbar} placeholder="Start typing to find your route" onChange={(e) => {setsearchValue(e.target.value)}}></input>
     }
-    {linestatus ? linestatus.map((line, i) => {
+    {linestatus ? filterLines().map((line, i) => {
       return (
-        <LineCard key={i} 
-        line={line.name} 
-        status={line.lineStatuses[0].statusSeverityDescription}
-        description={line.lineStatuses[0].reason}
-        id={line.id}
-        statusSeverity={line.lineStatuses[0].statusSeverity}
-        mode={line.modeName}
+        <LineCard 
+          key={i} 
+          line={line.name} 
+          status={line.lineStatuses[0].statusSeverityDescription}
+          description={line.lineStatuses[0].reason}
+          id={line.id}
+          statusSeverity={line.lineStatuses[0].statusSeverity}
+          mode={line.modeName}
         />
       )}) : <LoadingSpinner/>}
     </div>

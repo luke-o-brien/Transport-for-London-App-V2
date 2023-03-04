@@ -4,7 +4,7 @@
   margin-left: 5%;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+  box-shadow: rgba(9, 30, 66, 0.0) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 }
 
 .cardContent {
@@ -25,11 +25,17 @@
 }
 .viewDetails {
   border: none;
-  background-color: rgba(255, 210, 30, 0.418);
+  border: 0.5px solid #f0506e;
   border-radius: 5px;
-  color: white;
+  background-color: #fef4f6;
+  color: #f0506e;;
+  //color: white;
   padding: 5px;
   height: auto;
+  // border-radius: 100%;
+  // height: 15px;
+  // width: 15px;
+  // background-color: red;
 }
 
 .descriptions {

@@ -1,0 +1,46 @@
+.navbar {
+  width: 100%;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.burgerIcon {
+  margin: 10px 5vw;
+  cursor: pointer;
+}
+
+.navbarLinkContainer {
+  list-style: none;
+  position: absolute;
+  height: calc(100vh - 50px);
+  width: 100vw;
+  background-color: var(--theme-color);
+  display: flex;
+  flex-direction: column;
+  transition: 1s;
+  gap: 10vh;
+}
+
+.navbarSideMenuHidden {
+  list-style: none;
+  position: absolute;
+  height: calc(100vh - 50px);
+  width: 100vw;
+  background-color: var(--theme-color);
+  display: flex;
+  flex-direction: column;
+  margin-left: 100vw;
+  animation: fadeOut 2s;
+  transition: 2s;
+  gap: 10vh;
+}
+
+.linkItem {
+  width: 80%;
+  margin-left: 10%;
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--primary-font);
+}

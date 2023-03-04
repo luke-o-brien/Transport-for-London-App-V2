@@ -1,7 +1,7 @@
 :root {
   --theme-color: rgb(255, 255, 255);
   --primary-font: black;
-  --card-color: green;
+  --card-color: rgb(255, 255, 255);
   --bakerloo:  #B36305;
   --central: #E32017;
   --circle: #FFD300;
@@ -27,11 +27,11 @@
   --bus: #E32017;
 }
 
-[data-theme="light" ] {
+/* [data-theme="light" ] {
   --theme-color: rgb(255, 255, 255);
   --primary-font: black;
   --card-color: rgb(255, 255, 255);
-}
+} */
 
 [data-theme="dark" ] {
   --theme-color: rgb(29, 29, 37);
@@ -41,7 +41,11 @@
 
 
 
-
+html,body {
+  overflow-x:hidden;
+  width: 100vw;
+  overflow-y: scroll;
+}
 
 body {
   margin: 0;
@@ -50,6 +54,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
+  position: relative;
 }
 
 code {
