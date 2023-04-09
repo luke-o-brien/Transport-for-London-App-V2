@@ -1,0 +1,90 @@
+.LineCard {
+  background-color: var(--card-color);
+  width: 90%;
+  margin-left: 5%;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(9, 30, 66, 0.0) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2px 0px
+}
+
+.lineName {
+  font-size: 1.0rem;
+  padding-bottom: 5px;
+}
+
+.statuscontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.moreStatuses {
+  font-size: 12px;
+}
+.detailsContainer {
+  display: flex;
+  align-items: center;
+}
+.viewDetails {
+  border: none;
+  border: 0.5px solid #f0506e;
+  border-radius: 5px;
+  background-color: #fef4f6;
+  color: #f0506e;;
+  padding: 5px;
+  height: fit-content;
+  margin: auto;
+  margin-right: 0;
+}
+
+.viewDetailsMinor {
+  background: #fff6ee;
+  color: #faa05a;
+  padding: 5px;
+  height: fit-content;
+  border: none;
+  border: 0.5px solid #faa05a;
+  border-radius: 5px;
+  margin: auto;
+  margin-right: 0;
+
+}
+
+.viewDetailsGood {
+  background: #edfbf6;
+  color: #32d296;
+  border: 0.5px solid #32d296;
+  border-radius: 5px;
+}
+
+// @keyframes fadeIn {
+//   0%   {opacity: 0;}
+//   25%  {opacity: 0;}
+//   50%  {opacity: 0;}
+//   100% {opacity: 1;}
+// }
+
+.descriptions {
+  transition: max-height 1s;
+  overflow: hidden;
+  max-height: 800px;
+}
+
+.descriptionsHidden {
+  transition-property: all;
+  transition: 1s;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.descript {
+  padding: 10px 0px;
+}

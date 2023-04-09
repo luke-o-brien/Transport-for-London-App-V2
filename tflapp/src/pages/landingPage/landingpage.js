@@ -19,6 +19,7 @@ function LandingPage() {
         <p>Live Departures</p>
       </Link>
     </div>
+    <p>this is a test <span>of my solution</span></p>
     </>
   )
 }

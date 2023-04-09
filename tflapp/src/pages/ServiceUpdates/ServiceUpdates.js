@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import LineCard from "./components/LineCard";
+import LineCard from "./components/Linecard/LineCard";
 import styles from "./ServiceUpdates.module.scss"
 import LoadingSpinner from "../../Components/LoadingSpinner/loadingspinner";
 
@@ -59,8 +59,8 @@ function ServiceUpdates() {
         <LineCard 
           key={i} 
           line={line.name} 
-          status={line.lineStatuses[0].statusSeverityDescription}
-          description={line.lineStatuses[0].reason}
+          status={line.lineStatuses}
+          description={line.lineStatuses}
           id={line.id}
           statusSeverity={line.lineStatuses[0].statusSeverity}
           mode={line.modeName}

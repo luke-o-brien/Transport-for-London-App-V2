@@ -20,7 +20,6 @@ function App() {
           <Route path="/" element={<LandingPage/>} />
           <Route path="/livedepartures" element={<LiveDepartures />} />
           <Route path="/serviceUpdates" element={<ServiceUpdates/>} />
-    
         </Routes>
     </div>
   );
