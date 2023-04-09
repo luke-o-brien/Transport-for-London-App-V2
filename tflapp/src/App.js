@@ -6,6 +6,7 @@ import LiveDepartures from './pages/Live departures/livedepartures'
 import ServiceUpdates from './pages/ServiceUpdates/ServiceUpdates';
 import './App.css';
 import Navbar from './Components/navbar/navbar';
+import StationDepartures from './pages/StationDepartures/stationDeparture';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<LandingPage/>} />
           <Route path="/livedepartures" element={<LiveDepartures />} />
           <Route path="/serviceUpdates" element={<ServiceUpdates/>} />
+          <Route path="/livedepartures/:stationname" element={<StationDepartures />} />
         </Routes>
     </div>
   );
