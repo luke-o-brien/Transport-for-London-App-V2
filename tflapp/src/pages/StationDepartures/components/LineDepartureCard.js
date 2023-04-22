@@ -1,34 +1,21 @@
 import react from "react";
 import styles from "./LineDepartureCard.module.scss"
+import { departureLinesArray } from "../../../data/apiCallVariables";
 
-const LineDeparture = (props) => {
+const LineDeparture = ({line, atco}) => {
   const [departures, setDepartures] = react.useState(undefined)
-
-
-  const content = props
-  console.log(content)
-  const line = props["line"]
-  const station = props["atco"]
-  console.log(station)
-  console.log(line)
-
-
   react.useEffect(() => {
     async function getLiveDepartures() {
-      if (line === null) {
-        console.log("no params")
-      } else if (line === "bakerloo" || line === "central" || line === "victoria" || line === "jubilee" || line === "district" || line === "circle" || line === "metropolitan" || line === "northern" || line === "piccadilly" || line === "hammersmith-city" || line === "dlr" || line === "overground") {
-        const resp = await fetch(`https://api.tfl.gov.uk/Line/${line}/Arrivals/${station}`)
+      if(departureLinesArray.includes(line)) {
+        const resp = await fetch(`https://api.tfl.gov.uk/Line/${line}/Arrivals/${atco}`)
         const departureData = await resp.json()
-        const departure = departureData
-        const sortProperty = "timeToStation";
-        const sorted = departure.sort((a, b) => a[sortProperty] -  b[sortProperty]);
+        const sorted = departureData.sort((a, b) => a["timeToStation"] -  b["timeToStation"]);
         console.log(sorted)
         setDepartures(sorted)
       }  
     }
     getLiveDepartures()
-  }, [line, station]);
+  }, [line, atco]);
 
   return ( 
     departures ? 
@@ -43,7 +30,6 @@ const LineDeparture = (props) => {
         })} 
       </div> : null
   )
-
 }
 
 export default LineDeparture
