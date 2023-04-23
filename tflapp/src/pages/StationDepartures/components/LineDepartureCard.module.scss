@@ -1,3 +1,59 @@
 .h1 {
   color: red;
 }
+
+.lineDepartureCard {
+  // width: 90vw;
+  background-color: var(--card-color);
+  border-radius: 5px;
+  // margin-left: 5vw;
+  box-shadow: rgba(9, 30, 66, 0.0) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  margin-top: 30px;
+}
+
+.LDCtitle {
+  color: white;
+  border-radius: 5px 5px 0px 0px;
+  padding: 10px 0px;
+}
+
+.lineTitle {
+  margin-left: 5px;
+}
+
+.LDCvariables {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+  font-weight: 600;
+  font-size: 16px;
+  border-bottom: solid grey 1px;
+}
+
+.LDCservice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 5px;
+  //border-bottom: 0.5px solid #d9d9d9;
+}
+.lineDepartures {
+  width: 90vw;
+  margin-left: 5vw;
+  border-radius: 5px;
+  box-shadow: rgba(9, 30, 66, 0.0) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  margin-top: 30px;
+  background-color: var( --card-color);
+  border-radius: 5px;
+
+}
+
+.directionHeading {
+  padding: 10px 0px;
+  margin: 0px 5px;
+}
+
+.lineSection {
+  padding-bottom: 20px;
+}

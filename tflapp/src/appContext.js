@@ -15,7 +15,7 @@ export function Themeprovider({ children }) {
   const hours = today.getHours()
   console.log(hours)
   if(hours > 19 || hours < 6 || hours === 0 ) {
-    setTheme("light")
+    setTheme("dark")
   } else {
     setTheme("light")
   }

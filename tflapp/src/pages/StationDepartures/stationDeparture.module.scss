@@ -1,0 +1,15 @@
+.availableLineContainer {
+  width: 90vw;
+  margin-left: 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.availableLine {
+  background-color: (var(--card-color));
+  width: 40vw;
+  border: 1px solid grey;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}

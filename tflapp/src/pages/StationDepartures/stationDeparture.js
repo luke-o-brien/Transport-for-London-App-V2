@@ -11,6 +11,7 @@ const StationDepartures = () => {
   const [modeData, setModeData] = useState(undefined)
   const [displayLine, setDisplayLine] = useState(undefined)
   const [stationATCO, setStationATCO] = useState(undefined)
+  const [LineButtonRender, setLineButtonRender] = useState(true)
   const location = useLocation();
   const stationId = location.state;
 
@@ -21,7 +22,21 @@ const StationDepartures = () => {
       const response = await fetch(`https://api.tfl.gov.uk/StopPoint/${stationId}`)
       const data = await response.json()
       setModeData(data)
-      console.log(data.lineGroup.lineIdentifier)
+      console.log(data.lineGroup)
+      let linearray = []
+      data.lineGroup.map((line, i) => {
+        line.lineIdentifier.map((linename) => {
+          if (departureLinesArray.includes(linename)) {
+            linearray.push({"name" : linename, "Atco" : line.stationAtcoCode})
+          } 
+        })})
+      console.log(linearray)
+      if (linearray.length < 2) {
+        setStationATCO(linearray[0].Atco)
+        setDisplayLine(linearray[0].name)
+        setLineButtonRender(false)
+        setshow(linearray[0].name)
+      }
     }
     getStationData()
   }, []);
@@ -38,7 +53,7 @@ const StationDepartures = () => {
   return ( modeData ?
     <div>
       <h2 className={styles.stationName}>{(modeData.commonName).replace("Underground Station", "")}</h2>
-      <div className={styles.availableLineContainer}>
+      {LineButtonRender && <div className={styles.availableLineContainer}>
         {modeData.lineGroup.map((line, i) => {
           return line.lineIdentifier.map((linename) => {
             return departureLinesArray.includes(linename)? 
@@ -46,11 +61,12 @@ const StationDepartures = () => {
               : null
           })
         })}
-      </div>
+      </div>}
       <div>
       <LineDepartureCard  
         line={displayLine} 
-        atco={stationATCO}/>
+        atco={stationATCO}
+        lineButtonRender={LineButtonRender}/>
       </div>
     </div> : <p>waiting on data</p>
   )
